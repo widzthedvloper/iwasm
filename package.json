@@ -4,8 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests",
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
   },
   "author": "Widzmarc Jean Nesly Phelle",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.17"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.19.18"
+  }
 }
